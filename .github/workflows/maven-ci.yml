@@ -45,8 +45,8 @@ jobs:
           distribution: 'temurin'
           java-version-file: .tool-versions
           server-id: central
-          server-username: OSSRH_USERNAME
-          server-password: OSSRH_PASSWORD
+          server-username: CENTRAL_USERNAME
+          server-password: CENTRAL_PASSWORD
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           gpg-passphrase: GPG_PASSPHRASE
       - name: Build Maven Project
@@ -56,8 +56,8 @@ jobs:
         if: success() && (github.event_name == 'push')
         run: ./mvnw --batch-mode deploy -D ci.deploy
         env:
-          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+          CENTRAL_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
+          CENTRAL_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
       - name: Publish Test Report
         if: always()
