@@ -30,9 +30,6 @@ on:
       - 'NOTICE.txt'
       - '**/README.md'
 
-env:
-  PRIMARY_JAVA_VERSION: '11'
-
 jobs:
 
   build:
