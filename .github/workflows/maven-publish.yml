@@ -22,7 +22,7 @@ jobs:
       - name: Set version
         run: ./mvnw versions:set -DnewVersion=${{ github.event.release.tag_name }}
       - name: Publish package
-        run: ./mvnw --batch-mode deploy -D ci.deploy
+        run: ./mvnw --batch-mode gpg:sign deploy -D ci.deploy
         env:
           CENTRAL_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
           CENTRAL_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}
