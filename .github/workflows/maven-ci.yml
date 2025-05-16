@@ -37,28 +37,26 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        java: ['11', '17']
-    name: Build Java - ${{ matrix.java }}
+    name: Build Java
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v2
       - name: Maven Prepare
         id: maven-prepare
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v4
         with:
-          java-version: ${{ matrix.java }}
+          distribution: 'temurin'
+          java-version-file: .tool-versions
           server-id: ossrh
           server-username: OSSRH_USERNAME
           server-password: OSSRH_PASSWORD
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
       - name: Build Maven Project
-        if: success() && (github.event_name == 'pull_request' || (github.event_name == 'push' && matrix.java != env.PRIMARY_JAVA_VERSION))
+        if: success() && (github.event_name == 'pull_request')
         run: ./mvnw --batch-mode install -D ci.build
       - name: Build Maven Project and Deploy to Sonatype OSSRH
-        if: success() && (github.event_name == 'push' && matrix.java == env.PRIMARY_JAVA_VERSION)
+        if: success() && (github.event_name == 'push')
         run: ./mvnw --batch-mode deploy -D ci.deploy
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
