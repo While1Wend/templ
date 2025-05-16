@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.optum.templ</groupId>
+    <groupId>com.while1wend.templ</groupId>
     <artifactId>templ</artifactId>
     <version>1.0.X-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -17,8 +17,8 @@
     </modules>
 
     <organization>
-        <name>Optum</name>
-        <url>https://optum.github.io/</url>
+        <name>While1Wend</name>
+        <url>http://while1wend.com/</url>
     </organization>
 
     <licenses>
@@ -33,20 +33,20 @@
         <developer>
             <id>JohnMThayer</id>
             <name>John Thayer</name>
-            <email>john.thayer@optum.com</email>
-            <organization>Optum</organization>
+            <email>info@while1wend.com</email>
+            <organization>While1Wend</organization>
             <roles>
                 <role>Project Lead</role>
             </roles>
         </developer>
     </developers>
 
-    <url>https://github.com/optum/templ</url>
+    <url>https://github.com/while1wend/templ</url>
 
     <scm>
-        <url>https://github.com/optum/templ</url>
-        <connection>scm:git:https://github.com/optum/templ.git</connection>
-        <developerConnection>scm:git:git@github.com:optum/templ.git</developerConnection>
+        <url>https://github.com/while1wend/templ</url>
+        <connection>scm:git:https://github.com/while1wend/templ.git</connection>
+        <developerConnection>scm:git:git@github.com:while1wend/templ.git</developerConnection>
     </scm>
 
     <properties>
@@ -127,7 +127,7 @@
                         <serverId>ossrh</serverId>
                         <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                         <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                        <stagingProfileId>d56a306692c92</stagingProfileId>
+<!--                        <stagingProfileId>d56a306692c92</stagingProfileId>-->
                     </configuration>
                 </plugin>
                 <plugin>
