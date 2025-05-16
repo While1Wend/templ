@@ -44,7 +44,7 @@
     <url>https://github.com/while1wend/templ</url>
 
     <scm>
-        <url>https://github.com/while1wend/templ</url>
+        <url>https://github.com/while1wend/templ/tree/main/</url>
         <connection>scm:git:https://github.com/while1wend/templ.git</connection>
         <developerConnection>scm:git:git@github.com:while1wend/templ.git</developerConnection>
     </scm>
@@ -344,16 +344,6 @@
                     <name>ci.deploy</name>
                 </property>
             </activation>
-<!--            <distributionManagement>-->
-<!--                <snapshotRepository>-->
-<!--                    <id>ossrh</id>-->
-<!--                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
-<!--                </snapshotRepository>-->
-<!--                <repository>-->
-<!--                    <id>ossrh</id>-->
-<!--                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>-->
-<!--                </repository>-->
-<!--            </distributionManagement>-->
             <build>
                 <plugins>
                     <plugin>
@@ -366,15 +356,6 @@
                         </configuration>
                     </plugin>
                 </plugins>
-<!--                <plugins>-->
-<!--                    <plugin>-->
-<!--                        <artifactId>maven-gpg-plugin</artifactId>-->
-<!--                    </plugin>-->
-<!--                    <plugin>-->
-<!--                        <groupId>org.sonatype.plugins</groupId>-->
-<!--                        <artifactId>nexus-staging-maven-plugin</artifactId>-->
-<!--                    </plugin>-->
-<!--                </plugins>-->
             </build>
         </profile>
 
