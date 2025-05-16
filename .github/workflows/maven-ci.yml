@@ -44,7 +44,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version-file: .tool-versions
-          server-id: ossrh
+          server-id: central
           server-username: OSSRH_USERNAME
           server-password: OSSRH_PASSWORD
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
